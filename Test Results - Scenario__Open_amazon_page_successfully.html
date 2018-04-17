@@ -1,0 +1,445 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Test Results &mdash; Scenario: Open amazon page successfully</title>
+<style type="text/css">
+          html {
+            height: 100%
+          }
+
+          body {
+            margin: 0 auto;
+            padding: 0;
+            text-align: left;
+            height: 100%;
+            font-family: myriad, arial, tahoma, verdana, sans-serif;
+            color: #151515;
+            font-size: 90%;
+            line-height: 1.3em;
+            background-color: #fff;
+          }
+
+          * {
+            margin: 0;
+            padding: 0
+          }
+
+          .clr {
+            clear: both;
+            overflow: hidden;
+          }
+
+          img {
+            border: none
+          }
+
+          a {
+            color: #0046b0;
+            text-decoration: none;
+          }
+
+          a:hover {
+            text-decoration: none;
+          }
+
+          a:focus, a:active {
+            outline: none
+          }
+
+          .noborder {
+            border: none
+          }
+
+          h1 {
+            color: #151515;
+            font-size: 180%;
+            line-height: 1.1em;
+            font-weight: bold;
+          }
+
+          h2 {
+            color: #393D42;
+            font-size: 160%;
+            font-weight: normal
+          }
+
+          h3 {
+            font-size: 120%;
+            font-weight: bold;
+            margin-bottom: .5em
+          }
+
+          h4 {
+            font-size: 110%;
+          }
+
+          h5 {
+            font-size: 110%;
+          }
+
+          span.failed {
+            color: #ff0000
+          }
+
+          span.error {
+            color: #ff0000
+          }
+
+          span.passed {
+            color: #1d9d01
+          }
+
+          span.ignored {
+            color: #fff600
+          }
+
+          span.skipped {
+            color: #fff600
+          }
+
+          hr {
+            background-color: blue
+          }
+
+          #container {
+            min-width: 30em;
+          }
+
+          #header {
+            padding: 0;
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+            background-color: #c7ceda;
+          }
+
+          #header h1 {
+            margin: 1em 3em 1em 1.7em;
+          }
+
+          #header h1 strong {
+            white-space: nowrap;
+          }
+
+          #header .time {
+            margin-top: 2.2em;
+            margin-right: 3.4em;
+            float: right;
+          }
+
+          #treecontrol {
+            margin: 0;
+            padding: .5em 3em .5em 0;
+            text-align: right;
+            background-color: #fff;
+          }
+
+          #treecontrol ul li {
+            display: inline;
+            list-style: none;
+            color: #666;
+          }
+
+          #content {
+            padding: 0 2.5em 2em 1.7em;
+          }
+
+          #content ul {
+            margin: .4em 0 .1em 2em;
+            list-style: none;
+          }
+
+          #content ul li.level {
+            cursor: pointer;
+          }
+
+          #content ul li.level span {
+            display: block;
+            font-weight: bold;
+          }
+
+          #content ul li.level.top {
+            margin-bottom: .3em;
+          }
+
+          #content ul li.level.top > span {
+            padding: .5em 0 .5em 1em;
+            font-size: 120%;
+            color: #151515;
+            background-color: #f2f2f2;
+            border-left: solid 10px #93e078;
+          }
+
+          #content ul li.level.top.failed > span {
+            border-left: solid 10px #f02525;
+          }
+
+          #content ul li.level.top.ignored > span {
+            border-left: solid 10px #f8d216;
+          }
+
+          #content ul li.level.suite > span {
+            margin-bottom: .8em;
+            padding: 0 0 0 .8em;
+            display: block;
+            font-size: 110%;
+            line-height: 1em;
+            color: #151515;
+            border-left: solid 15px #93e078;
+          }
+
+          #content ul li.level.suite.failed > span {
+            border-left: solid 15px #f02525;
+          }
+
+          #content ul li.level.suite.ignored > span {
+            border-left: solid 15px #f8d216;
+          }
+
+          #content ul li.level.suite > ul {
+            margin-bottom: 1.5em;
+          }
+
+          #content ul li.level.test > span {
+            padding: .3em 0 .3em 1em;
+            color: #0046b0;
+            font-size: 100%;
+            border-left: solid 6px #93e078;
+            border-bottom: solid 1px #dbdbdb;
+          }
+
+          #content ul li.level.test.failed > span {
+            border-left: solid 6px #f02525;
+          }
+
+          #content ul li.level.test.ignored > span {
+            border-left: solid 6px #f8d216;
+          }
+
+          #content ul li.text p, #content ul li.text span {
+            margin-bottom: 1.5em;
+            color: #151515 !important;
+            font-size: 90% !important;
+            font-weight: normal !important;
+            overflow-x: auto;
+            cursor: auto !important;
+            background: none !important;
+            border: none !important;
+          }
+
+          #content ul li.text span {
+            margin-bottom: 0;
+            display: block;
+          }
+
+          #content ul li.text span.stderr {
+            color: #8b0000 !important;
+          }
+
+          #content ul li .time {
+            margin-right: .5em;
+            width: 5em;
+            text-align: right;
+            font-size: 13px;
+            color: #151515;
+            font-style: normal;
+            font-weight: normal;
+            float: right;
+          }
+
+          #content ul li span .status {
+            width: 6em;
+            font-size: 90%;
+            color: #1d9d01;
+            font-style: normal;
+            font-weight: normal;
+            float: right;
+            text-align: right;
+          }
+
+          #content ul li.failed > span .status {
+            color: #ff0000;
+          }
+
+          #content ul li.ignored > span .status {
+            color: #d6b000;
+          }
+
+          #footer {
+              height: 2em;
+              background-color: #c7ceda;
+          }
+          #footer p {
+              padding: .4em 0 0 3.6em;
+              font-size: 80%;
+          }
+        </style>
+
+<script type="text/javascript">
+
+</script>
+<script type="text/javascript">
+
+</script>
+<script type="text/javascript">
+
+	</script>
+
+            </head>
+<body>
+<div id="container">
+<div id="header">
+<div class="time" xmlns="">22.26 s</div>
+<h1>Scenario: Open amazon page successfully: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">19 total, </span><span class="passed">19 passed</span></strong>
+</h1>
+<div id="treecontrol">
+<ul>
+<li>
+<a title="Collapse the entire tree below" href="#">Collapse</a>
+                  |
+                </li>
+<li>
+<a title="Expand the entire tree below" href="#">Expand</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<ul id="tree">
+<li xmlns="" class="level top open">
+<span><em class="time">
+<div class="time">22.26 s</div>
+</em>@Functional</span>
+<ul>
+<li class="level suite open">
+<span><em class="time">
+<div class="time">22.26 s</div>
+</em>Open amazon page successfully</span>
+<ul>
+<li class="level suite open">
+<span><em class="time">
+<div class="time">22.26 s</div>
+</em>Examples:</span>
+<ul>
+<li class="level suite open">
+<span><em class="time">
+<div class="time">22.26 s</div>
+</em>Scenario: Line: 32</span>
+<ul>
+<li class="level test">
+<span><em class="time">
+<div class="time">9.60 s</div>
+</em><em class="status">passed</em>user enters amazon</span>
+<ul>
+<li class="text">
+<span class="stderr">log4j:WARN No appenders could be found for logger (com.amazon.core.WebDriverFactory).<br/>log4j:WARN Please initialize the log4j system properly.<br/>log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.<br/>Starting ChromeDriver 2.37.544337 (8c0344a12e552148c185f7d5117db1f28d6c9e85) on port 7743<br/>Only local connections are allowed.<br/></span>
+</li>
+</ul>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">483 ms</div>
+</em><em class="status">passed</em>user selects book tab</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">4.48 s</div>
+</em><em class="status">passed</em>user enters bookname "Game of Thrones"</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">53 ms</div>
+</em><em class="status">passed</em>user is in books module</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">35 ms</div>
+</em><em class="status">passed</em>verify the first item has the title "A Game of Thrones (A Song of Ice and Fire, Book 1)"</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">47 ms</div>
+</em><em class="status">passed</em>verify the book type is "Paperback"</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">46 ms</div>
+</em><em class="status">passed</em>verify the book price "&pound;4.00"</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">4.25 s</div>
+</em><em class="status">passed</em>navigate to "A Game of Thrones (A Song of Ice and Fire, Book 1)"</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">64 ms</div>
+</em><em class="status">passed</em>verify the book type in book details page as "Paperback"</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">1.20 s</div>
+</em><em class="status">passed</em>user add the book to basket</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">203 ms</div>
+</em><em class="status">passed</em>verify the notification is shown as "Added to Basket"</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">65 ms</div>
+</em><em class="status">passed</em>verify basket subtotal items are "Basket subtotal"</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">1.16 s</div>
+</em><em class="status">passed</em>user selects edit basket</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">155 ms</div>
+</em><em class="status">passed</em>verify the user is in shopping basket page "Shopping Basket"</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">37 ms</div>
+</em><em class="status">passed</em>verify the book "A Game of Thrones (A Song of Ice and Fire, Book 1)" is shown in the list</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">49 ms</div>
+</em><em class="status">passed</em>verify the book type in basket is "Paperback"</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">34 ms</div>
+</em><em class="status">passed</em>verify the price in basket page is "&pound;4.00"</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">34 ms</div>
+</em><em class="status">passed</em>verify the quantity in basket page is "1"</span>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">273 ms</div>
+</em><em class="status">passed</em>verify the subtotal price in basket page as "Subtotal (1 item): &pound;4.00"</span>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="footer">
+<p>Generated by IntelliJ IDEA on 16/4/18 8:19 PM</p>
+</div>
+</body>
+</html>
